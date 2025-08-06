@@ -120,12 +120,21 @@ export default function SalaryThiefApp() {
             alt="使用者頭像"
             className="w-16 h-16 rounded-full mx-auto mt-2"
           />
-          <button
-            onClick={handleSignOut}
-            className="mt-3 text-sm text-blue-600 underline hover:text-blue-800"
-          >
-            🔁 登出 / 更換帳號
-          </button>
+          {/* 登出圖片按鈕 */}
+          <div className="flex justify-center my-3">
+            <button
+              onClick={handleSignOut}
+              className="flex flex-col items-center focus:outline-none hover:scale-110 transition-transform"
+              title="登出 / 換帳號"
+            >
+              <img
+                src="/logout.png" // 換成你的圖檔路徑
+                alt="登出"
+                className="w-10 h-10 rounded-full border-2 border-pink-200 shadow-md"
+              />
+              <span className="mt-1 text-xs text-pink-400">登出</span>
+            </button>
+          </div>
         </div>
       )}
 
@@ -183,7 +192,14 @@ export default function SalaryThiefApp() {
         ))}
         <button
           onClick={stopTask}
-          className="col-span-3 bg-red-500 hover:bg-red-600 text-white p-2 rounded shadow font-bold"
+          disabled={!currentTask}
+          className={`
+            col-span-3 p-2 rounded shadow font-bold transition-all
+            ${currentTask
+              ? "bg-red-500 hover:bg-red-600 text-white cursor-pointer"
+              : "bg-gray-300 text-gray-400 cursor-not-allowed"
+            }
+          `}
         >
           🛑 停止計時
         </button>
