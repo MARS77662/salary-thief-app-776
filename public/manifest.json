@@ -1,0 +1,16 @@
+{
+  "name": "薪水小偷 Salary Thief - 摸魚神器",
+  "short_name": "薪水小偷",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#EDEDED",
+  "theme_color": "#1A1A1A",
+  "description": "一鍵摸魚計時器，讓你優雅偷薪水 ✨",
+  "icons": [
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

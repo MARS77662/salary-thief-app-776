@@ -1,0 +1,28 @@
+.container {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+}
+input {
+  margin: 0.5rem;
+  padding: 0.3rem;
+  font-size: 1rem;
+}
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.activity {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+button {
+  padding: 0.4rem 0.8rem;
+  font-size: 1rem;
+}
+.amount {
+  color: green;
+  font-weight: bold;
+}

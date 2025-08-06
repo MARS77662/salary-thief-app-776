@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.mars.salarythief",
+      "sha256_cert_fingerprints": [
+        "02:05:D5:8D:55:F5:8F:D4:8D:84:D8:9C:B4:00:5E:4B:D7:36:0A:DF:94:0D:37:C8:FC:A3:85:97:BE:53:7C:17"
+      ]
+    }
+  }
+]
