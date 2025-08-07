@@ -12,7 +12,6 @@ export default function LoginPage() {
     signInWithPopup(auth, provider)
       .then((result) => {
         console.log("🎉 登入成功:", result.user)
-        // 登入成功後會自動觸發 onAuthStateChanged
       })
       .catch((err) => {
         console.error("❌ signInWithPopup 錯誤", err)
@@ -20,28 +19,23 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-yellow-50 px-4">
-      <div className="relative w-full max-w-xs">
-        {/* 登入主視覺圖片 */}
+    <div className="min-h-screen flex items-center justify-center bg-yellow-50 text-black px-4">
+      <div className="relative max-w-xs w-full">
         <img
           src="/login-cover.png"
-          alt="登入封面"
-          className="w-full rounded-xl shadow-lg"
+          alt="封面圖"
+          className="w-full rounded-lg shadow-lg"
         />
-
-        {/* 登入按鈕 → 壓在圖片內的底部 */}
         <button
           onClick={handleLogin}
-          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-2 px-4 rounded-lg shadow"
+          className="absolute bottom-4 left-1/2 transform -translate-x-1/2 
+                     bg-yellow-400 hover:bg-yellow-500 text-black font-bold 
+                     py-2 px-4 rounded-lg shadow 
+                     min-w-[200px] text-base text-center"
         >
           使用 Google 登入
         </button>
       </div>
-
-      {/* 下方標語 */}
-      <p className="mt-4 text-pink-600 font-bold">
-        🧧 薪水小偷 Salary Thief
-      </p>
     </div>
   )
 }
