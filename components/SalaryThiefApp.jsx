@@ -44,7 +44,7 @@ export default function SalaryThiefApp() {
         const seconds = Math.floor((Date.now() - startTime) / 1000)
         setElapsedTime(seconds)
 
-        if (seconds > 0 && seconds % 10 === 0) {
+        if (seconds > 0 && seconds % 60 === 0) {
           setShowGoldRain(true)
           setTimeout(() => setShowGoldRain(false), 3000)
         }
@@ -124,7 +124,7 @@ export default function SalaryThiefApp() {
               title="登出 / 換帳號"
             >
               <img
-                src="/logout-new.png"
+                src="/logout.png"
                 alt="登出"
                 className="w-10 h-10 rounded-full border-2 border-pink-200 shadow-md"
               />
@@ -239,3 +239,4 @@ export default function SalaryThiefApp() {
     </div>
   )
 }
+
