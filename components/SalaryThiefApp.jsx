@@ -22,7 +22,6 @@ export default function SalaryThiefApp() {
   const actions = ["上廁所", "亂逛", "吃東西", "發呆", "滑手機", "閒聊", "小睡"]
   const salaryPerSecond = monthlySalary / (workHoursPerMonth * 60 * 60)
 
-  // 自動登入處理
   useEffect(() => {
     const auth = getAuth(app)
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
@@ -38,7 +37,6 @@ export default function SalaryThiefApp() {
     return () => unsubscribe()
   }, [])
 
-  // 計時器邏輯
   useEffect(() => {
     let timer
     if (currentTask && startTime) {
@@ -57,13 +55,12 @@ export default function SalaryThiefApp() {
     return () => clearInterval(timer)
   }, [currentTask, startTime])
 
-  // 登出處理
   const handleSignOut = () => {
     const auth = getAuth(app)
     signOut(auth)
       .then(() => {
         setUser(null)
-        window.location.reload() // 強制重整回登入頁
+        window.location.reload()
       })
       .catch((err) => console.error("登出失敗", err))
   }
@@ -120,7 +117,6 @@ export default function SalaryThiefApp() {
             alt="使用者頭像"
             className="w-16 h-16 rounded-full mx-auto mt-2"
           />
-          {/* 登出圖片按鈕 */}
           <div className="flex justify-center my-3">
             <button
               onClick={handleSignOut}
@@ -128,7 +124,7 @@ export default function SalaryThiefApp() {
               title="登出 / 換帳號"
             >
               <img
-                src="/logout.png" // 換成你的圖檔路徑
+                src="/logout-new.png"
                 alt="登出"
                 className="w-10 h-10 rounded-full border-2 border-pink-200 shadow-md"
               />
@@ -222,6 +218,23 @@ export default function SalaryThiefApp() {
 
       <div className="mt-6 text-right font-bold text-xl text-rose-600">
         🎉 總共偷了：NT${totalStolen}
+      </div>
+
+      <div className="mt-8 text-center">
+        <a
+          href="https://buymeacoffee.com/d477188l"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/bmc-button.webp"
+            alt="Buy Me a Coffee"
+            className="mx-auto w-48 hover:opacity-90 transition"
+          />
+        </a>
+        <p className="text-xs text-gray-500 mt-2">
+          謝謝你願意支持這隻偷薪熊 🧸☕
+        </p>
       </div>
     </div>
   )
